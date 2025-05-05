@@ -138,6 +138,31 @@
       transform: scale(1.1);
       box-shadow: 0 0 25px #ff00dd;
     }
+    .help-bot {
+      margin-top: 3rem;
+      background-color: #1a0c26;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #a200ff;
+      max-width: 800px;
+      text-align: left;
+    }
+    .help-bot h2 {
+      color: #ff00dd;
+      margin-bottom: 1rem;
+    }
+    .help-bot details {
+      margin-bottom: 1rem;
+    }
+    .help-bot summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #a200ff;
+    }
+    .help-bot p {
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
     footer {
       margin-top: 4rem;
       text-align: center;
@@ -161,11 +186,32 @@
       ArcLite is a revolutionary plasma lighter featuring high-voltage arc ignition, a built-in LED flashlight, waterproof casing, and USB-C fast charging — all designed in a futuristic, durable body. Perfect for adventure, everyday carry, or just lighting in style.
     </div>
     <div class="price">Only $29.99</div>
-    <form class="order-form" action="https://yourpaymentlink.com" method="get">
+    <form class="order-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="xdlin59buisness@duck.com">
+      <input type="hidden" name="item_name" value="ArcLite Lighter">
+      <input type="hidden" name="currency_code" value="USD">
+      <input type="hidden" name="amount" value="29.99">
       <label for="quantity">Quantity:</label>
       <input type="number" id="quantity" name="quantity" min="1" value="1">
       <button type="submit">Buy Now</button>
     </form>
+
+    <div class="help-bot">
+      <h2>Need Help?</h2>
+      <details>
+        <summary>What if I didn't receive my product?</summary>
+        <p>If you haven't received your product after 7 business days, please contact us with your order confirmation and we'll resolve it as soon as possible.</p>
+      </details>
+      <details>
+        <summary>What is the product about?</summary>
+        <p>ArcLite is a futuristic plasma lighter designed for reliability, performance, and sleek style. It's waterproof, rechargeable via USB-C, and includes a built-in flashlight.</p>
+      </details>
+      <details>
+        <summary>How can I pay?</summary>
+        <p>We currently accept only PayPal. Click the Buy Now button above to securely complete your purchase using PayPal.</p>
+      </details>
+    </div>
   </main>
   <footer>
     &copy; 2025 ArcLite. All rights reserved.
