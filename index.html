@@ -186,14 +186,16 @@
       ArcLite is a revolutionary plasma lighter featuring high-voltage arc ignition, a built-in LED flashlight, waterproof casing, and USB-C fast charging — all designed in a futuristic, durable body. Perfect for adventure, everyday carry, or just lighting in style.
     </div>
     <div class="price">Only $29.99</div>
-    <form class="order-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+
+    <!-- PAYMENT FORM -->
+    <form class="order-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onsubmit="return updatePayPalAmount()">
       <input type="hidden" name="cmd" value="_xclick">
       <input type="hidden" name="business" value="xdlin59buisness@duck.com">
       <input type="hidden" name="item_name" value="ArcLite Lighter">
       <input type="hidden" name="currency_code" value="USD">
-      <input type="hidden" name="amount" value="29.99">
+      <input type="hidden" name="amount" id="paypal-amount" value="29.99">
       <label for="quantity">Quantity:</label>
-      <input type="number" id="quantity" name="quantity" min="1" value="1">
+      <input type="number" id="quantity" name="quantity" min="1" value="1" required>
       <button type="submit">Buy Now</button>
     </form>
 
@@ -202,6 +204,10 @@
       <details>
         <summary>What if I didn't receive my product?</summary>
         <p>If you haven't received your product after 7 business days, please contact us with your order confirmation and we'll resolve it as soon as possible.</p>
+      </details>
+      <details>
+        <summary>What happens after I pay?</summary>
+        <p>Once you complete your purchase, please contact us on Discord (username: hazinf) or DM on TikTok for further assistance.</p>
       </details>
       <details>
         <summary>What is the product about?</summary>
@@ -216,5 +222,15 @@
   <footer>
     &copy; 2025 ArcLite. All rights reserved.
   </footer>
+
+  <!-- PayPal Quantity Script -->
+  <script>
+    function updatePayPalAmount() {
+      const quantity = parseInt(document.getElementById('quantity').value) || 1;
+      const unitPrice = 29.99;
+      document.getElementById('paypal-amount').value = (quantity * unitPrice).toFixed(2);
+      return true;
+    }
+  </script>
 </body>
 </html>
